@@ -6,7 +6,7 @@ import { TasksContext } from "../contexts/tasks";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+const Home = () => {
   const router = useRouter();
   const { homeState } = useContext(TasksContext);
 
@@ -16,26 +16,22 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div>
       <div>
-        <div>
-          <p>Kenzie Habits</p>
-          <form onSubmit={handleForm}>
-            <label htmlFor="inputName">
-              Insira seu nome
-              <input
-                type="text"
-                id="inputName"
-                placeholder="Nome e sobrenome"
-              />
-            </label>
-            <button type="submit">Entrar</button>
-          </form>
-        </div>
-        <div>
-          <iframe src="https://embed.lottiefiles.com/animation/41068"></iframe>
-        </div>
+        <p>Kenzie Habits</p>
+        <form onSubmit={handleForm}>
+          <label htmlFor="inputName">
+            Insira seu nome
+            <input type="text" id="inputName" placeholder="Nome e sobrenome" />
+          </label>
+          <button type="submit">Entrar</button>
+        </form>
       </div>
-    </>
+      <div>
+        <iframe src="https://embed.lottiefiles.com/animation/41068"></iframe>
+      </div>
+    </div>
   );
-}
+};
+
+export default Home;
