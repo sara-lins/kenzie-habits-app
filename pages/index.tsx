@@ -1,13 +1,14 @@
-import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "@next/font/google";
-import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
+import { useContext } from "react";
+
+import { TasksContext } from "../contexts/tasks";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const router = useRouter();
+  const { homeState } = useContext(TasksContext);
 
   const handleForm = (e: any) => {
     e.preventDefault();
