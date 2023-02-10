@@ -1,36 +1,22 @@
-import { Inter } from "@next/font/google";
-import { useRouter } from "next/router";
-import { useContext } from "react";
+import { JetBrains_Mono } from "@next/font/google";
 
-import { TasksContext } from "../contexts/tasks";
+import { ContainerHome } from "../styles/home.style";
+import AnimationHome from "../components/animation";
+import Form from "../components/form";
 
-const inter = Inter({ subsets: ["latin"] });
+const jetbrais = JetBrains_Mono({ weight: ["700", "400", "300"] });
 
 const Home = () => {
-  const router = useRouter();
-  const { homeState } = useContext(TasksContext);
-
-  const handleForm = (e: any) => {
-    e.preventDefault();
-    router.push("/dashboard");
-  };
-
   return (
-    <div>
-      <div>
-        <p>Kenzie Habits</p>
-        <form onSubmit={handleForm}>
-          <label htmlFor="inputName">
-            Insira seu nome
-            <input type="text" id="inputName" placeholder="Nome e sobrenome" />
-          </label>
-          <button type="submit">Entrar</button>
-        </form>
+    <ContainerHome className={jetbrais.className}>
+      <div className="containerForm">
+        <h1>Kenzie Habits</h1>
+        <Form />
       </div>
-      <div>
-        <iframe src="https://embed.lottiefiles.com/animation/41068"></iframe>
+      <div className="ContainerAnimation">
+        <AnimationHome />
       </div>
-    </div>
+    </ContainerHome>
   );
 };
 
