@@ -6,22 +6,23 @@ import ContainerNeedToDoTasks from "../components/containerNeedToDoTasks";
 import Header from "../components/header";
 import Nav from "../components/nav";
 import { TasksContext } from "../contexts/tasks";
+import { ContainerDashboard } from "../styles/dashboard.style";
 
 const Dashboard = () => {
   const { homeState } = useContext(TasksContext);
+
   return (
-    <>
+    <ContainerDashboard>
       <Header />
-      <h1>Dashboard</h1>
       <Nav />
-      {homeState === "all" ? (
+      {homeState === "All tasks" ? (
         <ContainerAllTasks />
-      ) : homeState === "finished" ? (
+      ) : homeState === "Finished" ? (
         <ContainerFinishedTasks />
       ) : (
         <ContainerNeedToDoTasks />
       )}
-    </>
+    </ContainerDashboard>
   );
 };
 

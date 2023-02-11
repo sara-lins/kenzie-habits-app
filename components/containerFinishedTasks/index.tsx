@@ -1,13 +1,13 @@
 import CardTasks from "../cardsTasks";
 
 const ContainerFinishedTasks = () => {
-  const arr: any[] = [];
+  const arr: any[] = [{}];
   return (
-    <section>
+    <section className="containerFinishedTasks">
       {arr.length ? (
         arr.map((elem, index) => <CardTasks key={index} data={elem} />)
       ) : (
-        <p>Você não possui tasks</p>
+        <p>Você não possui tasks finalizadas</p>
       )}
     </section>
   );
