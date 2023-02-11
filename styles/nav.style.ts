@@ -13,10 +13,6 @@ export const NavContainer = styled.div<INavStyle>`
 
   button {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 10px;
-    width: 100%;
 
     font-weight: 600;
     border: none;
@@ -25,8 +21,6 @@ export const NavContainer = styled.div<INavStyle>`
 
     p {
       border-radius: 5px;
-      margin-left: 5px;
-      padding: 3px;
       color: var(--blue-light);
       background-color: #3532ff40;
     }
@@ -35,11 +29,31 @@ export const NavContainer = styled.div<INavStyle>`
   .containerButtonMobile {
     display: flex;
     justify-content: space-between;
-    padding: 25px 15px 0 15px;
+    padding: 25px 20px 0 20px;
     width: 100%;
     height: 80%;
 
-    p {
+    font-weight: 600;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    button {
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px;
+      width: 100%;
+
+      p {
+        margin-left: 5px;
+        padding: 3px;
+      }
+    }
+
+    #titleNavMobile {
+      width: 8rem;
+      text-align: center;
+      font-size: 1.2rem;
       font-weight: 600;
     }
   }
@@ -65,7 +79,7 @@ export const NavContainer = styled.div<INavStyle>`
     font-weight: 600;
   }
 
-  @media (min-width: 490px) {
+  @media (min-width: 560px) {
     button {
       padding: 0;
     }
@@ -78,16 +92,32 @@ export const NavContainer = styled.div<INavStyle>`
       display: flex;
       width: 100%;
       justify-content: space-between;
-      padding: 0 15px 0 15px;
+      padding: 0px 30px 0 30px;
 
-      p {
+      button {
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 10px 15px;
+        width: 100%;
+
+        p {
+          margin-left: 5px;
+          padding: 3px;
+        }
+      }
+
+      #titleNavDesktop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
         font-weight: 600;
       }
 
       div {
         display: flex;
         justify-content: space-between;
-        width: 20rem;
+        width: 25rem;
       }
     }
   }

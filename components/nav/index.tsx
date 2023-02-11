@@ -13,7 +13,9 @@ const Nav = () => {
   return (
     <NavContainer state={homeState} className={jetbrais.className}>
       <div className="containerButtonMobile">
-        <p className={montserrat.className}>To-do List</p>
+        <p id="titleNavMobile" className={montserrat.className}>
+          To-do List
+        </p>
         <details>
           <summary className={montserrat.className}>{homeState}</summary>
           <Button title="All tasks" />
@@ -22,7 +24,9 @@ const Nav = () => {
         </details>
       </div>
       <div className="containerButtonDesktop">
-        <p className={montserrat.className}>To-do List</p>
+        <p id="titleNavDesktop" className={montserrat.className}>
+          To-do List
+        </p>
         <div>
           <Button title="All tasks" />
           <Button title="Finished" />

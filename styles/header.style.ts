@@ -13,9 +13,9 @@ export const HeaderApp = styled.header`
 
   .containerLogo {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 12rem;
+    width: 20rem;
     padding-left: 15px;
     gap: 10px;
 
@@ -27,10 +27,16 @@ export const HeaderApp = styled.header`
 
   .containerUser {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 10rem;
     padding-right: 15px;
+    width: 18rem;
+    gap: 10px;
+
+    p {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
     div {
       display: flex;
@@ -49,10 +55,14 @@ export const HeaderApp = styled.header`
     }
   }
 
-  @media (min-width: 661px) {
+  @media (min-width: 700px) {
     .containerUser {
-      width: 9rem;
-      gap: 10px;
+      width: 23%;
+      padding-right: none;
+    }
+
+    .containerLogo {
+      padding-left: none;
     }
   }
 `;

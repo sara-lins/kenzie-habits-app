@@ -23,6 +23,9 @@ const CardTasks = ({ data }: IDataCard) => {
 
   return (
     <Card className={montserrat.className} state={isChecked}>
+      <button>
+        <SlOptionsVertical />
+      </button>
       <p className="titleCard">titulo</p>
       <div>
         <p className="tagCard">tag</p>
@@ -31,9 +34,6 @@ const CardTasks = ({ data }: IDataCard) => {
           onClick={() => setIsChecked(!isChecked)}
         >
           {isChecked ? <MdRadioButtonChecked /> : <MdRadioButtonUnchecked />}
-        </button>
-        <button>
-          <SlOptionsVertical />
         </button>
       </div>
     </Card>

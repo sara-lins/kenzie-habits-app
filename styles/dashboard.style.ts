@@ -8,9 +8,14 @@ export const ContainerDashboard = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    gap: 3rem;
     width: 100%;
     height: 5rem;
+
+    p,
+    button {
+      font-weight: 600;
+    }
 
     p {
       display: flex;
@@ -54,19 +59,27 @@ export const ContainerDashboard = styled.div`
     border-radius: 15px 15px 0 0;
     background-color: var(--blue-dark);
 
-    .containerData {
-      p,
-      button {
-        font-weight: 600;
-      }
-    }
-
     .containerCards {
       display: flex;
       justify-content: center;
-      width: 95%;
+      width: 100%;
 
       overflow-y: scroll;
+      scrollbar-width: thin;
+      scrollbar-color: var(--blue-light);
+
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--blue-light);
+        border-radius: 20px;
+      }
     }
   }
 
@@ -96,12 +109,35 @@ export const ContainerDashboard = styled.div`
 
   @media (min-width: 490px) {
     .containerAllTasks {
+      padding: 35px 45px 0 45px;
+    }
+  }
+
+  @media (min-width: 700px) {
+    .containerAllTasks {
       flex-direction: row;
       justify-content: space-evenly;
+      padding: 45px 36px 0 36px;
+    }
+
+    .containerFinishedTasks,
+    .containerNeedToDoTasks {
+      padding-top: 45px;
+    }
+
+    .containerData {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-left: 5rem;
+      width: 11rem;
+      height: 15rem;
     }
 
     .containerCards {
-      width: 60%;
+      width: 50%;
+      height: 30rem;
+      padding-right: 3rem;
     }
   }
 `;
