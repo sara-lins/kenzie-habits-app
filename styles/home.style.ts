@@ -45,7 +45,7 @@ export const ContainerHome = styled.div`
   input,
   span {
     font-family: "Montserrat", sans-serif;
-    font-weight: 300;
+    font-weight: 400;
   }
 
   h1 {
