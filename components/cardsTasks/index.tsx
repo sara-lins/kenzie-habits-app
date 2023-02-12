@@ -5,35 +5,28 @@ import { MdRadioButtonChecked, MdRadioButtonUnchecked } from "react-icons/md";
 import { TasksContext } from "../../contexts/tasks";
 import { Card } from "../../styles/card.style";
 import { Montserrat } from "@next/font/google";
+import updateCheckTaskFunction from "../../service/updateCheckTasks";
+import { IDataCard } from "../../interfaces";
 
 const montserrat = Montserrat({ weight: ["600", "400", "300"] });
 
-interface IDataCard {
-  data: {
-    title: string;
-    tag: string;
-    created_at: string;
-    updated_at: string;
-  };
-}
-
 const CardTasks = ({ data }: IDataCard) => {
-  const { title, tag } = data;
+  const { title, tag, isActive } = data;
   const { isChecked, setIsChecked } = useContext(TasksContext);
 
   return (
-    <Card className={montserrat.className} state={isChecked}>
+    <Card className={montserrat.className} state={isActive}>
       <button>
         <SlOptionsVertical />
       </button>
-      <p className="titleCard">titulo</p>
+      <p className="titleCard">{title}</p>
       <div>
-        <p className="tagCard">tag</p>
+        <p className="tagCard">{tag}</p>
         <button
           className="buttonCheck"
-          onClick={() => setIsChecked(!isChecked)}
+          onClick={() => updateCheckTaskFunction(data.id, data)}
         >
-          {isChecked ? <MdRadioButtonChecked /> : <MdRadioButtonUnchecked />}
+          {isActive ? <MdRadioButtonChecked /> : <MdRadioButtonUnchecked />}
         </button>
       </div>
     </Card>
