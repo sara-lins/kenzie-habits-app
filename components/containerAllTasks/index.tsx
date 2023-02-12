@@ -1,4 +1,6 @@
 import { Montserrat } from "@next/font/google";
+import { useContext } from "react";
+import { TasksContext } from "../../contexts/tasks";
 import CardTasks from "../cardsTasks";
 
 interface ICard {
@@ -9,7 +11,7 @@ interface ICard {
 const montserrat = Montserrat({ weight: ["600", "400", "300"] });
 
 const ContainerAllTasks = () => {
-  const newarr: any[] = [{}];
+  const { tasks } = useContext(TasksContext);
 
   return (
     <section className="containerAllTasks">
@@ -18,7 +20,7 @@ const ContainerAllTasks = () => {
         <button>+</button>
       </div>
       <div className="containerCards">
-        {newarr.length ? (
+        {tasks.length ? (
           newarr.map((elem, index) => <CardTasks key={index} data={elem} />)
         ) : (
           <p>Você não possui tasks</p>
