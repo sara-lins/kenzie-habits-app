@@ -1,15 +1,32 @@
+import { useContext } from "react";
+import { Montserrat } from "@next/font/google";
+
 import CardTasks from "../cardsTasks";
+import { TasksContext } from "../../contexts/tasks";
+
+const montserrat = Montserrat({ weight: ["600", "400", "300"] });
 
 const ContainerFinishedTasks = () => {
-  const arr: any[] = [{}];
+  const { tasksFilterFinished } = useContext(TasksContext);
+
   return (
-    <section className="containerFinishedTasks">
-      {arr.length ? (
-        arr.map((elem, index) => <CardTasks key={index} data={elem} />)
+    <ul className="containerFinishedTasks">
+      {tasksFilterFinished.length ? (
+        tasksFilterFinished.map((elem, index) => (
+          <CardTasks
+            key={index}
+            id={elem.id}
+            is_active={elem.is_active}
+            tag={elem.tag}
+            title={elem.title}
+          />
+        ))
       ) : (
-        <p>Você não possui tasks finalizadas</p>
+        <p className={montserrat.className}>
+          Você não possui tasks finalizadas
+        </p>
       )}
-    </section>
+    </ul>
   );
 };
 

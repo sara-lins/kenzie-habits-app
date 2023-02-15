@@ -51,7 +51,7 @@ export const ContainerDashboard = styled.div`
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
-    padding-top: 20px;
+    padding: 45px 20px 0 20px;
     width: 100%;
     height: 100%;
 
@@ -61,8 +61,13 @@ export const ContainerDashboard = styled.div`
 
     .containerCards {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
       width: 100%;
+      max-width: 1000px;
+      height: 38rem;
+      padding: 0 8px 15px 8px;
 
       overflow-y: scroll;
       scrollbar-width: thin;
@@ -83,23 +88,14 @@ export const ContainerDashboard = styled.div`
     }
   }
 
+  .containerNeedToDoTasks,
   .containerFinishedTasks {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: flex-start;
-    padding-top: 20px;
-    height: 100%;
-
-    color: var(--white);
-    border-radius: 15px 15px 0 0;
-    background-color: var(--blue-dark);
-  }
-
-  .containerNeedToDoTasks {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    padding-top: 20px;
+    gap: 1.5rem;
+    padding: 45px 20px 0 20px;
     height: 100%;
 
     color: var(--white);
@@ -108,8 +104,17 @@ export const ContainerDashboard = styled.div`
   }
 
   @media (min-width: 490px) {
-    .containerAllTasks {
-      padding: 35px 45px 0 45px;
+    .containerAllTasks,
+    .containerNeedToDoTasks,
+    .containerFinishedTasks {
+      padding: 45px 45px 0 45px;
+    }
+
+    .containerFinishedTasks,
+    .containerNeedToDoTasks {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
     }
   }
 
@@ -123,6 +128,23 @@ export const ContainerDashboard = styled.div`
     .containerFinishedTasks,
     .containerNeedToDoTasks {
       padding-top: 45px;
+
+      overflow-y: scroll;
+      scrollbar-width: thin;
+      scrollbar-color: var(--blue-light);
+
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--blue-light);
+        border-radius: 20px;
+      }
     }
 
     .containerData {
@@ -135,9 +157,23 @@ export const ContainerDashboard = styled.div`
     }
 
     .containerCards {
-      width: 50%;
-      height: 30rem;
-      padding-right: 3rem;
+      height: 25rem;
+      overflow-y: scroll;
+      scrollbar-width: thin;
+      scrollbar-color: var(--blue-light);
+
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--blue-light);
+        border-radius: 20px;
+      }
     }
   }
 `;

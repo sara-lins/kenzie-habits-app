@@ -1,13 +1,14 @@
-import { Montserrat } from "@next/font/google";
+import { useContext } from "react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
 import { BsCheckAll } from "react-icons/bs";
 import { BiErrorCircle } from "react-icons/bi";
+import { Montserrat } from "@next/font/google";
+import { yupResolver } from "@hookform/resolvers/yup";
 
-import formSchema from "../../schema";
-import { useContext } from "react";
+import { formSchemaHome } from "../../schema";
 import { TasksContext } from "../../contexts/tasks";
+import getAllTasksFunction from "../../service/getAllTasks";
 
 const montserrat = Montserrat({ weight: ["600", "400", "300"] });
 
@@ -16,19 +17,21 @@ interface IDataForm {
 }
 
 const Form = () => {
-  const { setNameUser } = useContext(TasksContext);
   const router = useRouter();
+  const { setNameUser, setTasks, filterFinishedTasks } =
+    useContext(TasksContext);
   const {
     register,
     handleSubmit,
     formState: { errors, isValid },
   } = useForm<IDataForm>({
-    resolver: yupResolver(formSchema),
+    resolver: yupResolver(formSchemaHome),
   });
 
   const handleForm = (data: IDataForm) => {
-    console.log(data);
     setNameUser(data.inputName);
+    getAllTasksFunction(setTasks);
+    filterFinishedTasks();
     router.push("/dashboard");
   };
   return (

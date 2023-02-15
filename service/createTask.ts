@@ -1,9 +1,11 @@
 import ApiServer from "./api";
+import getAllTasksFunction from "./getAllTasks";
+import { IDataFormCreateTask } from "../interfaces";
 
-const createTaskFunction = (data: {}) => {
+const createTaskFunction = (data: IDataFormCreateTask, setState: Function) => {
   ApiServer.post("", data)
     .then((res) => {
-      console.log(res);
+      getAllTasksFunction(setState);
     })
     .catch((err) => {
       console.error(err);

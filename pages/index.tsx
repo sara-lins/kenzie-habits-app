@@ -1,8 +1,8 @@
 import { JetBrains_Mono } from "@next/font/google";
 
-import { ContainerHome } from "../styles/home.style";
+import Form from "../components/formHomePage";
 import AnimationHome from "../components/animation";
-import Form from "../components/form";
+import { ContainerHome } from "../styles/home.style";
 
 const jetbrais = JetBrains_Mono({ weight: ["700", "400", "300"] });
 

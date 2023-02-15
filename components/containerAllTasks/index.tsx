@@ -1,31 +1,38 @@
 import { Montserrat } from "@next/font/google";
 import { useContext } from "react";
+
 import { TasksContext } from "../../contexts/tasks";
 import CardTasks from "../cardsTasks";
-
-interface ICard {
-  title: string;
-  tag: string;
-}
 
 const montserrat = Montserrat({ weight: ["600", "400", "300"] });
 
 const ContainerAllTasks = () => {
-  const { tasks } = useContext(TasksContext);
+  const { tasks, setIsOpenModalCreateTask } = useContext(TasksContext);
+
+  const newDate = new Date();
+  const day = newDate.getDate().toString().padStart(2, "0");
+  const month = (newDate.getMonth() + 1).toString().padStart(2, "0");
+  const date = `${day} ${month}`;
 
   return (
     <section className="containerAllTasks">
       <div className="containerData">
-        <p className={montserrat.className}>08 fev</p>
-        <button>+</button>
+        <p className={montserrat.className}>{date}</p>
+        <button
+          onClick={() => {
+            setIsOpenModalCreateTask(true);
+          }}
+        >
+          +
+        </button>
       </div>
-      <div className="containerCards">
+      <ul className="containerCards">
         {tasks.length ? (
-          newarr.map((elem, index) => <CardTasks key={index} data={elem} />)
+          tasks.map((elem, index) => <CardTasks key={index} {...elem} />)
         ) : (
-          <p>Você não possui tasks</p>
+          <p className={montserrat.className}>Você não possui tasks</p>
         )}
-      </div>
+      </ul>
     </section>
   );
 };

@@ -1,9 +1,15 @@
 import ApiServer from "./api";
+import getAllTasksFunction from "./getAllTasks";
+import { IDataUpdateCheckTask } from "../interfaces";
 
-const updateCheckTaskFunction = (id: string, data: {}) => {
-  ApiServer.patch(`check/${id}`, data)
+const updateCheckTaskFunction = (
+  id: string,
+  data: IDataUpdateCheckTask,
+  setState: Function
+) => {
+  ApiServer.patch(`check/${id}/`, data)
     .then((res) => {
-      console.log(res);
+      getAllTasksFunction(setState);
     })
     .catch((err) => {
       console.error(err);
