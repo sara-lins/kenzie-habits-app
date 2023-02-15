@@ -8,6 +8,8 @@ _<h4 align="center">🚧 **Project status:** Finalizado 🚀 🚧</h4>_
 
 Link: **[Kenzie Habits App](https://kenzie-habits-app.vercel.app/)**
 
+Figma: **[sketch](https://www.figma.com/file/CymU7R7WFNDB9m7Eu47Ue6/Kenzie-Habits?node-id=0%3A1&t=bLAevjxerWLj53fz-1)**
+
 ### **Features**
 
 - [x] List all tasks
