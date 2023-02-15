@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useContext } from "react";
 
 import Nav from "../components/nav";
@@ -17,6 +18,9 @@ const Dashboard = () => {
 
   return (
     <ContainerDashboard>
+      <Head>
+        <title>Kenzie Habits</title>
+      </Head>
       <Header />
       <Nav />
       {homeState === "All tasks" ? (
