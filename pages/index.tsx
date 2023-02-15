@@ -1,40 +1,23 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "../styles/Home.module.css";
-import { useRouter } from "next/router";
+import { JetBrains_Mono } from "@next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+import Form from "../components/formHomePage";
+import AnimationHome from "../components/animation";
+import { ContainerHome } from "../styles/home.style";
 
-export default function Home() {
-  const router = useRouter();
+const jetbrais = JetBrains_Mono({ weight: ["700", "400", "300"] });
 
-  const handleForm = (e: any) => {
-    e.preventDefault();
-    router.push("/dashboard");
-  };
-
+const Home = () => {
   return (
-    <>
-      <div>
-        <div>
-          <p>Kenzie Habits</p>
-          <form onSubmit={handleForm}>
-            <label htmlFor="inputName">
-              Insira seu nome
-              <input
-                type="text"
-                id="inputName"
-                placeholder="Nome e sobrenome"
-              />
-            </label>
-            <button type="submit">Entrar</button>
-          </form>
-        </div>
-        <div>
-          <iframe src="https://embed.lottiefiles.com/animation/41068"></iframe>
-        </div>
+    <ContainerHome className={jetbrais.className}>
+      <div className="containerForm">
+        <h1>Kenzie Habits</h1>
+        <Form />
       </div>
-    </>
+      <div className="ContainerAnimation">
+        <AnimationHome />
+      </div>
+    </ContainerHome>
   );
-}
+};
+
+export default Home;

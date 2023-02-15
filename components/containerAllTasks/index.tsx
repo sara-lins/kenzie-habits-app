@@ -1,21 +1,38 @@
+import { Montserrat } from "@next/font/google";
+import { useContext } from "react";
+
+import { TasksContext } from "../../contexts/tasks";
 import CardTasks from "../cardsTasks";
 
+const montserrat = Montserrat({ weight: ["600", "400", "300"] });
+
 const ContainerAllTasks = () => {
-  const newarr: any[] = [];
+  const { tasks, setIsOpenModalCreateTask } = useContext(TasksContext);
+
+  const newDate = new Date();
+  const day = newDate.getDate().toString().padStart(2, "0");
+  const month = (newDate.getMonth() + 1).toString().padStart(2, "0");
+  const date = `${day} ${month}`;
 
   return (
-    <section>
-      <div>
-        <p>08 fev</p>
-        <button>+</button>
+    <section className="containerAllTasks">
+      <div className="containerData">
+        <p className={montserrat.className}>{date}</p>
+        <button
+          onClick={() => {
+            setIsOpenModalCreateTask(true);
+          }}
+        >
+          +
+        </button>
       </div>
-      <div>
-        {newarr.length ? (
-          newarr.map((elem, index) => <CardTasks key={index} data={elem} />)
+      <ul className="containerCards">
+        {tasks.length ? (
+          tasks.map((elem, index) => <CardTasks key={index} {...elem} />)
         ) : (
-          <p>Você não possui tasks</p>
+          <p className={montserrat.className}>Você não possui tasks</p>
         )}
-      </div>
+      </ul>
     </section>
   );
 };
