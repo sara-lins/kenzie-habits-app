@@ -10,9 +10,10 @@ Link: **[Kenzie Habits App](https://kenzie-habits-app.vercel.app/)**
 
 ### **Features**
 
-- [x] List task
+- [x] List all tasks
 - [x] Create task
 - [x] Update task
+- [x] Update Check task
 - [x] Delete task
 
 ### **Interfaces**
