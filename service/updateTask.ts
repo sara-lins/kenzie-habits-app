@@ -1,15 +1,15 @@
 import ApiServer from "./api";
+import getAllTasksFunction from "./getAllTasks";
+import { IDataFormUpdateTask } from "../interfaces";
 
 const updateTaskFunction = (
-  setState: Function,
-  valueState: boolean,
   id: string,
-  data: {}
+  data: IDataFormUpdateTask,
+  setState: Function
 ) => {
-  ApiServer.patch(`${id}`, data)
+  ApiServer.patch(`${id}/`, data)
     .then((res) => {
-      console.log(res);
-      setState(valueState);
+      getAllTasksFunction(setState);
     })
     .catch((err) => {
       console.error(err);

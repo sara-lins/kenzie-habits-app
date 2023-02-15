@@ -1,9 +1,10 @@
 import ApiServer from "./api";
+import getAllTasksFunction from "./getAllTasks";
 
-const deleteTaskFunction = (id: string) => {
-  ApiServer.patch(`${id}`)
+const deleteTaskFunction = (id: string, setState: Function) => {
+  ApiServer.delete(`${id}/`)
     .then((res) => {
-      console.log(res.data);
+      getAllTasksFunction(setState);
     })
     .catch((err) => {
       console.error(err);

@@ -1,8 +1,7 @@
 import axios from "axios";
 
 const ApiServer = axios.create({
-  baseURL: "",
-  timeout: 5000,
+  baseURL: "https://kenzie-habits-server.onrender.com/api/task/",
 });
 
 export default ApiServer;

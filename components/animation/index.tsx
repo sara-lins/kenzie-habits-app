@@ -1,5 +1,6 @@
 import Lottie from "react-lottie";
 import { useState } from "react";
+
 import image from "../../assets/41068-man-filling-a-list.json";
 import { ContainerAnimation } from "../../styles/home.style";
 

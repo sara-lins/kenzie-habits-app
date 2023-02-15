@@ -4,13 +4,13 @@ interface ICardStyle {
   state: boolean;
 }
 
-export const Card = styled.div<ICardStyle>`
+export const Card = styled.li<ICardStyle>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 15px 0px 15px;
+  padding: 5px 15px 5px 15px;
   width: 100%;
-  height: 4rem;
+  min-height: 4rem;
 
   border-radius: 8px;
   border: var(--blue-light) solid 2px;
@@ -46,7 +46,8 @@ export const Card = styled.div<ICardStyle>`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 40%;
+    gap: 8px;
+    width: 45%;
     height: 100%;
   }
 
@@ -76,7 +77,8 @@ export const Card = styled.div<ICardStyle>`
   }
 
   @media (max-width: 490px) {
-    width: 85%;
+    width: 100%;
+    min-height: 4rem;
 
     .titleCard {
       width: 40%;
@@ -84,7 +86,8 @@ export const Card = styled.div<ICardStyle>`
   }
 
   @media (min-width: 700px) {
-    width: 90%;
+    width: 100%;
+    min-height: 4rem;
     padding: 0px 30px 0px 30px;
 
     div {
@@ -100,9 +103,5 @@ export const Card = styled.div<ICardStyle>`
       width: 1.3rem;
       font-size: 1.3rem;
     }
-
-    /* .containerAllTasks {
-      flex-direction: row;
-    } */
   }
 `;

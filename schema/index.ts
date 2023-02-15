@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-const formSchema = yup.object().shape({
+export const formSchemaHome = yup.object().shape({
   inputName: yup
     .string()
     .required("Nome obrigatório")
@@ -11,4 +11,7 @@ const formSchema = yup.object().shape({
     ),
 });
 
-export default formSchema;
+export const formSchemaCreateTask = yup.object().shape({
+  title: yup.string().required("Descrição obrigatória"),
+  tag: yup.string().required("Categoria obrigatória"),
+});

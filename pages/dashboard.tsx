@@ -1,15 +1,19 @@
 import { useContext } from "react";
 
+import Nav from "../components/nav";
+import Header from "../components/header";
+import { TasksContext } from "../contexts/tasks";
+import ModalCreateTask from "../components/modalCreate";
+import { ContainerDashboard } from "../styles/dashboard.style";
 import ContainerAllTasks from "../components/containerAllTasks";
 import ContainerFinishedTasks from "../components/containerFinishedTasks";
 import ContainerNeedToDoTasks from "../components/containerNeedToDoTasks";
-import Header from "../components/header";
-import Nav from "../components/nav";
-import { TasksContext } from "../contexts/tasks";
-import { ContainerDashboard } from "../styles/dashboard.style";
+import ModalUpdateDeleteTask from "../components/modalUpdateDelete";
 
 const Dashboard = () => {
   const { homeState } = useContext(TasksContext);
+  const { isOpenModalEditTask, isOpenModalCreateTask } =
+    useContext(TasksContext);
 
   return (
     <ContainerDashboard>
@@ -22,6 +26,8 @@ const Dashboard = () => {
       ) : (
         <ContainerNeedToDoTasks />
       )}
+      {isOpenModalCreateTask && <ModalCreateTask />}
+      {isOpenModalEditTask && <ModalUpdateDeleteTask />}
     </ContainerDashboard>
   );
 };

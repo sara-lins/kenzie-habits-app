@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 interface INavStyle {
   state: string;
@@ -91,6 +91,7 @@ export const NavContainer = styled.div<INavStyle>`
     .containerButtonDesktop {
       display: flex;
       width: 100%;
+      height: 30px;
       justify-content: space-between;
       padding: 0px 30px 0 30px;
 

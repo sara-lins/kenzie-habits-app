@@ -1,10 +1,10 @@
 import Link from "next/link";
+import { useContext } from "react";
 import { CgLogOut } from "react-icons/cg";
 import { FaUserAlt } from "react-icons/fa";
 import { JetBrains_Mono, Montserrat } from "@next/font/google";
 
 import { HeaderApp } from "../../styles/header.style";
-import { useContext } from "react";
 import { TasksContext } from "../../contexts/tasks";
 
 const jetbrais = JetBrains_Mono({ weight: ["700", "400", "300"] });
