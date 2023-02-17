@@ -44,8 +44,6 @@ Figma: **[sketch](https://www.figma.com/file/CymU7R7WFNDB9m7Eu47Ue6/Kenzie-Habit
 - TypeScript
 - Next.js
 - Styled-Components
-- Python
-- Django
 - UUID
 - ContextAPI
 - react-modal
