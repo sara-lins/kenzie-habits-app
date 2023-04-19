@@ -4,7 +4,7 @@
 
 <p align="center">Aplicativo desenvolvido para criar e organizar hábitos através de uma lista de tarefas</p>
 
-_<h4 align="center">🚧 **Project status:** Finalizado 🚀 🚧</h4>_
+_<h4 align="center">🚧 **Project status:** Finished/Finalizado 🚀 🚧</h4>_
 
 Link: **[Kenzie Habits App](https://kenzie-habits-app.vercel.app/)**
 
