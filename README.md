@@ -6,9 +6,11 @@
 
 _<h4 align="center">🚧 **Project status:** Finished/Finalizado 🚀 🚧</h4>_
 
-Link: **[Kenzie Habits App](https://kenzie-habits-app.vercel.app/)**
+App: **[Kenzie Habits App](https://kenzie-habits-app.vercel.app/)**
 
-Figma: **[sketch](https://www.figma.com/file/CymU7R7WFNDB9m7Eu47Ue6/Kenzie-Habits?node-id=0%3A1&t=bLAevjxerWLj53fz-1)**
+Server: **[Kenzie Habits Server - repository](https://github.com/sara-lins/kenzie-habits-server)**
+
+Figma: **[Sketch](https://www.figma.com/file/CymU7R7WFNDB9m7Eu47Ue6/Kenzie-Habits?node-id=0%3A1&t=bLAevjxerWLj53fz-1)**
 
 ### **Features**
 
